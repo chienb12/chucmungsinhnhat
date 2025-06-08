@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+			integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<title>Happy birthday</title>
+		<audio id="birthdaySong" autoplay loop>
+			<source src="happy-birthday.mp3" type="audio/mp3">
+		</audio>
+		<script>
+			window.onload = function() {
+				const audio = document.getElementById('birthdaySong');
+				const musicControl = document.querySelector('.music-control');
+				let isPlaying = true;
+
+				// Bắt buộc phát nhạc khi trang load
+				const playPromise = audio.play();
+				if (playPromise !== undefined) {
+					playPromise.then(_ => {
+						// Tự động phát thành công
+						musicControl.style.opacity = '1';
+					}).catch(error => {
+						// Bắt sự kiện click để phát nhạc
+						document.addEventListener('click', function initAudio() {
+							audio.play();
+							musicControl.style.opacity = '1';
+							document.removeEventListener('click', initAudio);
+						});
+					});
+				}
+
+				// Xử lý nút điều khiển nhạc
+				musicControl.addEventListener('click', function() {
+					if (isPlaying) {
+						audio.pause();
+						musicControl.style.opacity = '0.5';
+					} else {
+						audio.play();
+						musicControl.style.opacity = '1';
+					}
+					isPlaying = !isPlaying;
+				});
+			};
+		</script>
+	</head>
+	<body>
+		<div class="music-control" style="position: fixed; top: 20px; right: 20px; z-index: 1000; cursor: pointer;">
+			<i class="fas fa-music" style="font-size: 24px; color: #ff69b4;"></i>
+		</div>
+		<div class="container">
+			<div class="boxcontainer">
+				<div class="image">
+					<img src="flag.png" alt="" />
+				</div>
+				<div class="text-happybirthday">
+					<img src="texthappy.png" alt="" />
+				</div>
+				<div class="cake">
+					<img src="cake.png" alt="" />
+				</div>
+				<div class="box-balloon">
+					<div class="balloon-item1">
+						<img src="balloon.png" alt="" />
+					</div>
+					<div class="balloon-item1">
+						<img src="balloon.png" alt="" />
+					</div>
+				</div>
+				<div class="box-cloud">
+					<div class="cloud">
+						<img src="cloud.png" alt="" />
+					</div>
+					<div class="cloud">
+						<img src="cloud.png" alt="" />
+					</div>
+				</div>
+				<div class="box-firework">
+					<div class="firework">
+						<img src="firework.png" alt="" />
+						<img src="firework1.png" alt="" id="firework1" />
+					</div>
+					<div class="firework">
+						<img src="firework.png" alt="" />
+						<img src="firework1.png" alt="" id="firework1" />
+					</div>
+				</div>
+				<div class="paperCannons">
+					<img src="paperCannons1.png" alt="" />
+				</div>
+				<div class="box-giftbox">
+					<img src="giftbox.png" alt="" />
+					<img src="giftbox.png" alt="" />
+					<img src="giftbox.png" alt="" />
+					<img src="giftbox.png" alt="" />
+					<img src="giftbox.png" alt="" />
+					<img src="giftbox.png" alt="" />
+				</div>
+				<div class="mail">
+					<i class="fa-regular fa-envelope"></i>
+				</div>
+				<div class="boxcute">
+					<div class="cute1">
+						<img src="cute.png" alt="" />
+					</div>
+					<div class="cute2">
+						<img src="cute.png" alt="" />
+					</div>
+				</div>
+			</div>
+			<div class="boxMail">
+				<i class="fa-solid fa-xmark"></i>
+				<div class="boxMail-container">
+					<div class="card1">
+						<div class="userImg">
+							<img src="Picture3.jpg" alt="" />
+						</div>
+						<div class="chidenImg">
+							<img src="chiden.jpg" alt="" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin: 10px 0;" />
+						</div>
+						<h3>Happy birthday</h3>
+						<div class="imageCute">
+							<img src="chiden.png" alt="" />
+						</div>
+					</div>
+					<div class="card2">
+						<div class="card2-content">
+							<h3>Giửi Chi</h3>
+							<h2>
+								Hôm nay là một ngày thật đặc biệt – ngày đánh dấu bạn Chi bước sang tuổi 17, độ tuổi đẹp nhất của thanh xuân. Mình xin gửi đến Chi những lời chúc tốt đẹp và chân thành nhất. Mong bạn luôn vui vẻ, mạnh khỏe và giữ mãi nụ cười tươi trên môi. Tuổi 17 là cột mốc của ước mơ, của niềm tin và khát vọng. Hãy luôn tin vào bản thân, không ngừng nỗ lực để theo đuổi đam mê và chạm tay đến những mục tiêu mà bạn đang ấp ủ.
+
+Chi là một người bạn tuyệt vời – luôn biết quan tâm, sẻ chia và mang lại năng lượng tích cực cho mọi người xung quanh. Mình thật may mắn khi được đồng hành cùng bạn trên hành trình trưởng thành này. Mong rằng tuổi 17 của Chi sẽ thật rực rỡ, ngập tràn yêu thương và đầy ắp kỷ niệm đáng nhớ. Chúc bạn luôn là chính mình – mạnh mẽ, tự tin và tỏa sáng theo cách riêng. Sinh nhật vui vẻ nhé, Chi!
+							</h2>
+							<div class="imageCute2">
+								<img src="cute2.png" alt="" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script>
+		document.addEventListener('mousemove', function (e) {
+			let body = document.querySelector('body');
+			let heart = document.createElement('span');
+			let x = e.offsetX;
+			let y = e.offsetY;
+			heart.style.left = x + 'px';
+			heart.style.top = y + 'px';
+
+			let size = Math.random() * 10;
+			heart.style.width = 4 * size + 'px';
+			heart.style.height = 4 * size + 'px';
+
+			let transformValue = Math.random() * 360;
+			heart.style.transform = 'rotate(' + transformValue + 'deg)';
+
+			body.appendChild(heart);
+
+			setTimeout(function () {
+				heart.remove();
+			}, 1000);
+		});
+
+		let mailBox = document.querySelector('.mail');
+		let boxmail = document.querySelector('.boxMail');
+		var close = document.querySelector('.fa-xmark');
+		mailBox.onclick = function () {
+			mailBox.classList.toggle('active');
+			boxmail.classList.add('active');
+		};
+
+		close.addEventListener('click', function () {
+			boxmail.classList.remove('active');
+		});
+	</script>
+</html>
